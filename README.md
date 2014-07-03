@@ -7,3 +7,15 @@ Yola promise helper and utility functions.
 ```
 $ npm install promisehelpers
 ```
+
+## Test It
+
+```
+$ npm test
+```
+
+## Lint It
+
+```
+$ npm run jshint
+```
