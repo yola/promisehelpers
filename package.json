@@ -1,0 +1,31 @@
+{
+  "name": "promisehelpers",
+  "version": "0.0.0",
+  "description": "Promise helper functions",
+  "main": "src/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha",
+    "jshint": "jshint src/ test/ --config node_modules/jsgreat/.jshintrc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yola/promisehelpers.git"
+  },
+  "author": "Yola Engineering <engineers@yola.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yola/promisehelpers/issues"
+  },
+  "homepage": "https://github.com/yola/promisehelpers",
+  "devDependencies": {
+    "mocha": "1.20.x",
+    "chai": "1.9.x",
+    "sinon-chai": "2.5.x",
+    "sinon": "1.10.x",
+    "jsgreat": "~0.1.2",
+    "jshint": "~2.5.1"
+  }
+}
