@@ -33,7 +33,7 @@ describe('promise utility functions', function() {
       spy.should.have.been.called;
     });
 
-    it('returns the value passed to the closure', function() {
+    it('closure returns the value passed to it', function() {
       notifyFunc(321).should.equal(321);
     });
   });
