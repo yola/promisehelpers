@@ -6,6 +6,7 @@ var sinonChai = require('sinon-chai');
 var promiseHelpers = require('../src/index.js');
 var wrap = promiseHelpers.wrap;
 var notify = promiseHelpers.notify;
+var log = promiseHelpers.log;
 
 
 chai.should();
@@ -35,6 +36,12 @@ describe('promise utility functions', function() {
 
     it('closure returns the value passed to it', function() {
       notifyFunc(321).should.equal(321);
+    });
+  });
+
+  describe('log', function() {
+    it('returns the value passed to it', function() {
+      log(123).should.equal(123);
     });
   });
 });
