@@ -26,3 +26,14 @@ module.exports.notify = function(func) {
     return value;
   };
 };
+
+/** log
+ *  @function
+ *  @name log
+ *  @param {value} promise value
+ *  @return {value} promise value
+ */
+module.exports.log = function(value) {
+  console.log(value);
+  return value;
+};
