@@ -1,6 +1,7 @@
 'use strict';
 
 var chai = require('chai');
+var expect = require('chai').expect;
 var sinon = require('sinon');
 var sinonChai = require('sinon-chai');
 var promiseHelpers = require('../src/index.js');
@@ -39,7 +40,15 @@ describe('promise utility functions', function() {
 
   describe('findObjectWithKeyAndValueInArray', function() {
     var array = [{'name': 'foo', 'value': 'sup'}, {'name': 'bar'}];
-    var resultFunc = findObjectWithKeyAndValueInArray('name', 'foo');
-    resultFunc(array).should.have.property('value', 'sup');
+
+    it('finds an object in an array with key and value', function(){
+      var resultFunc = findObjectWithKeyAndValueInArray('name', 'foo');
+      resultFunc(array).should.have.property('value', 'sup');
+    });
+
+    it('returns undefined if no object is found in the array', function(){
+      var resultFunc = findObjectWithKeyAndValueInArray('name', 'who');
+      expect(resultFunc(array)).to.be.undefined;
+    });
   });
 });
