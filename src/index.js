@@ -26,3 +26,22 @@ module.exports.notify = function(func) {
     return value;
   };
 };
+
+/** findObjectWithKeyAndValueInArray
+ *  @function
+ *  @name findObjectWithKeyAndValueInArray
+ *  @param {function} array of objects
+ *  @param {function} key
+ *  @param {function} value
+ *  @return {function} object
+ */
+module.exports.findObjectWithKeyAndValueInArray = function(key, value) {
+  return function(array) {
+    for (var i = 0; i < array.length; i++) {
+      if (array[i][key] === value) {
+        return array[i];
+      }
+    }
+    return;
+  };
+};
