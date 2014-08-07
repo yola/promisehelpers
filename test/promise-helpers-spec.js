@@ -6,6 +6,8 @@ var sinonChai = require('sinon-chai');
 var promiseHelpers = require('../src/index.js');
 var wrap = promiseHelpers.wrap;
 var notify = promiseHelpers.notify;
+var insert = promiseHelpers.insert;
+var log = promiseHelpers.log;
 
 
 chai.should();
@@ -35,6 +37,22 @@ describe('promise utility functions', function() {
 
     it('closure returns the value passed to it', function() {
       notifyFunc(321).should.equal(321);
+    });
+  });
+
+  describe('insert', function() {
+    it('places values in an object and returns the object', function() {
+      insert('key', 'value')({})
+        .should.deep.equal({
+          key: 'value'
+        });
+    });
+  });
+
+  describe('log', function() {
+    it('returns the promise value', function() {
+      log('promise value')
+        .should.equal('promise value');
     });
   });
 });
