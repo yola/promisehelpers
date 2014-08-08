@@ -25,7 +25,10 @@
     "chai": "1.9.x",
     "sinon-chai": "2.5.x",
     "sinon": "1.10.x",
-    "jsgreat": "~0.1.2",
-    "jshint": "~2.5.1"
+    "jsgreat": "0.1.2",
+    "jshint": "2.5.x"
+  },
+  "dependencies": {
+    "isarray": "0.0.1"
   }
 }

@@ -47,6 +47,13 @@ describe('promise utility functions', function() {
           key: 'value'
         });
     });
+
+    it('deeply inserts objects', function() {
+      insert(['key1', 'key2', 'key3'], 'value')({})
+        .should.deep.equal({
+          key1: {key2: {key3: 'value'}}
+        });
+    });
   });
 
   describe('log', function() {
