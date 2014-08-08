@@ -1,5 +1,29 @@
 'use strict';
 
+var isArray = require('isarray');
+
+var insertHelper = function(keys, value, object) {
+  var index;
+  var key;
+  var nestedObject = object;
+
+  for(index = 0; index < keys.length; index++) {
+    key = keys[index];
+
+    if(!nestedObject[key]) {
+      nestedObject[key] = {};
+    }
+
+    if(index === keys.length - 1) {
+      nestedObject[key] = value;
+    } else {
+      nestedObject = nestedObject[key];
+    }
+  }
+
+  return object;
+};
+
 /** wrap
  *  @function
  *  @name wrap
@@ -36,6 +60,10 @@ module.exports.notify = function(func) {
  */
 module.exports.insert = function(key, value) {
   return function(object) {
+    if(isArray(key)) {
+      return insertHelper(key, value, object);
+    }
+
     object[key] = value;
     return object;
   };

@@ -27,5 +27,8 @@
     "sinon": "1.10.x",
     "jsgreat": "~0.1.2",
     "jshint": "~2.5.1"
+  },
+  "dependencies": {
+    "isarray": "0.0.1"
   }
 }
