@@ -54,6 +54,20 @@ describe('promise utility functions', function() {
           key1: {key2: {key3: 'value'}}
         });
     });
+
+    it('deeply inserts when objects are already present', function() {
+      insert(['key1', 'key2', 'key3'], 'value')({
+        key1: {otherKey: 'otherValue'}
+      })
+      .should.deep.equal({
+        key1: {
+          key2: {
+            key3: 'value'
+          },
+          otherKey: 'otherValue'
+        }
+      });
+    });
   });
 
   describe('log', function() {
