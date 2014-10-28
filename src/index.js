@@ -24,7 +24,9 @@ var insertHelper = function(keys, value, object) {
   return object;
 };
 
-/** wrap
+/** Takes a promise value and "wraps" it inside
+ *  the wrapperObject passed to wrap, at the
+ *  propertyName passed to wrap.
  *  @function
  *  @name wrap
  *  @param {object} wrapperObject
@@ -38,7 +40,7 @@ module.exports.wrap = function(obj, property) {
   };
 };
 
-/** nofitfy
+/** calls the funciton passed to notify with no arguments
  *  @function
  *  @name notify
  *  @param {function} callback
@@ -51,10 +53,11 @@ module.exports.notify = function(func) {
   };
 };
 
-/** insert
+/** places a value in an object at an arbitrary depth
+ *  specified by a keyPath.
  *  @function
  *  @name insert
- *  @param {string} key
+ *  @param {string|array<string>} keyPath
  *  @param {value} insertable
  *  @return {function} insertion helper
  */
@@ -69,7 +72,7 @@ module.exports.insert = function(key, value) {
   };
 };
 
-/** log
+/** log the promise value to the console
  *  @function
  *  @name log
  *  @param {value} promise value
