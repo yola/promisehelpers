@@ -40,7 +40,7 @@ module.exports.wrap = function(obj, property) {
   };
 };
 
-/** calls the funciton passed to notify with no arguments
+/** Calls the funciton passed to notify with no arguments
  *  @function
  *  @name notify
  *  @param {function} callback
@@ -53,7 +53,7 @@ module.exports.notify = function(func) {
   };
 };
 
-/** places a value in an object at an arbitrary depth
+/** Places a value in an object at an arbitrary depth
  *  specified by a keyPath.
  *  @function
  *  @name insert
