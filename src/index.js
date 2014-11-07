@@ -60,7 +60,7 @@ module.exports.notify = function(func) {
  *  specified by a keyPath.
  *  @function
  *  @name insert
- *  @param {string|string[]} either a single string, or an array of strings
+ *  @param {string|array} key(s) either a single string, or an array of strings
  *  representing the key path at which the insertion should occur.
  *  @param {value} insertable
  *  @return {function} insertion helper which takes an object for inserting into

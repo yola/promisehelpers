@@ -33,14 +33,14 @@ Takes a function(funcA) passed to it and returns a new function
 **Returns**: `function`, notifyWrapper calls the callback, and then returns whatever was passed to it
 
 
-### PomiseHelpers.insert(either, insertable) 
+### PomiseHelpers.insert(key(s), insertable) 
 
 Places a value in an object at an arbitrary depth
  specified by a keyPath.
 
 **Parameters**
 
-**either**: `string | Array.&lt;string&gt;`, a single string, or an array of strings
+**key(s)**: `string | array`, either a single string, or an array of strings
  representing the key path at which the insertion should occur.
 
 **insertable**: `value`, Places a value in an object at an arbitrary depth
