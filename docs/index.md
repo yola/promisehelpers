@@ -1,4 +1,4 @@
-# Global
+# PomiseHelpers
 
 
 
@@ -6,7 +6,7 @@
 
 * * *
 
-### wrap(wrapperObject, propertyName) 
+### PomiseHelpers.wrap(wrapperObject, propertyName) 
 
 Takes a promise value and "wraps" it inside
  the wrapperObject passed to wrap, at the
@@ -14,45 +14,42 @@ Takes a promise value and "wraps" it inside
 
 **Parameters**
 
-**wrapperObject**: `object`, Takes a promise value and "wraps" it inside
- the wrapperObject passed to wrap, at the
- propertyName passed to wrap.
+**wrapperObject**: `object`, object on which you want the property stored
 
-**propertyName**: `string`, Takes a promise value and "wraps" it inside
- the wrapperObject passed to wrap, at the
- propertyName passed to wrap.
+**propertyName**: `string`, key you want to store the subsequent value at on the wrapperObject
 
-**Returns**: `function`, doWrap
+**Returns**: `function`, doWrap function with one argument: the value to be stored at propertyName on wrapperObject
 
 
-### notify(callback) 
+### PomiseHelpers.notify(callback) 
 
-calls the funciton passed to notify with no arguments
+Takes a function(funcA) passed to it and returns a new function
+ which executes [funcA] and then returns whatever it was passed.
 
 **Parameters**
 
-**callback**: `function`, calls the funciton passed to notify with no arguments
+**callback**: `function`, the function to be called
 
-**Returns**: `function`, notifyWrapper
+**Returns**: `function`, notifyWrapper calls the callback, and then returns whatever was passed to it
 
 
-### insert(keyPath, insertable) 
+### PomiseHelpers.insert(key(s), insertable) 
 
-places a value in an object at an arbitrary depth
+Places a value in an object at an arbitrary depth
  specified by a keyPath.
 
 **Parameters**
 
-**keyPath**: `string | array.&lt;string&gt;`, places a value in an object at an arbitrary depth
+**key(s)**: `string | array`, either a single string, or an array of strings
+ representing the key path at which the insertion should occur.
+
+**insertable**: `value`, Places a value in an object at an arbitrary depth
  specified by a keyPath.
 
-**insertable**: `value`, places a value in an object at an arbitrary depth
- specified by a keyPath.
-
-**Returns**: `function`, insertion helper
+**Returns**: `function`, insertion helper which takes an object for inserting into
 
 
-### log(promise) 
+### PomiseHelpers.log(promise) 
 
 log the promise value to the console
 

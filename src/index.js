@@ -1,5 +1,7 @@
 'use strict';
 
+/** @module PomiseHelpers */
+
 var isArray = require('isarray');
 
 var insertHelper = function(keys, value, object) {
@@ -29,9 +31,9 @@ var insertHelper = function(keys, value, object) {
  *  propertyName passed to wrap.
  *  @function
  *  @name wrap
- *  @param {object} wrapperObject
- *  @param {string} propertyName
- *  @return {function} doWrap
+ *  @param {object} wrapperObject object on which you want the property stored
+ *  @param {string} propertyName key you want to store the subsequent value at on the wrapperObject
+ *  @return {function} doWrap function with one argument: the value to be stored at propertyName on wrapperObject
  */
 module.exports.wrap = function(obj, property) {
   return function(value) {
@@ -40,11 +42,12 @@ module.exports.wrap = function(obj, property) {
   };
 };
 
-/** Calls the funciton passed to notify with no arguments
+/** Takes a function(funcA) passed to it and returns a new function
+ *  which executes [funcA] and then returns whatever it was passed.
  *  @function
  *  @name notify
- *  @param {function} callback
- *  @return {function} notifyWrapper
+ *  @param {function} callback the function to be called
+ *  @return {function} notifyWrapper calls the callback, and then returns whatever was passed to it
  */
 module.exports.notify = function(func) {
   return function(value) {
@@ -57,9 +60,10 @@ module.exports.notify = function(func) {
  *  specified by a keyPath.
  *  @function
  *  @name insert
- *  @param {string|array<string>} keyPath
+ *  @param {string|array} key(s) either a single string, or an array of strings
+ *  representing the key path at which the insertion should occur.
  *  @param {value} insertable
- *  @return {function} insertion helper
+ *  @return {function} insertion helper which takes an object for inserting into
  */
 module.exports.insert = function(key, value) {
   return function(object) {
