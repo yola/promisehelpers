@@ -12,6 +12,10 @@ var insertHelper = function(keys, value, object) {
   for(index = 0; index < keys.length; index++) {
     key = keys[index];
 
+    if (key === '__proto__' || key === 'constructor' || key === 'prototype') {
+      continue;
+    }
+
     if(!nestedObject[key]) {
       nestedObject[key] = {};
     }

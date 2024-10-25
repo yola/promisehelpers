@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+# 0.0.6
+
+* Prevented Prototype Pollution in `insertHelper` function
+
 # 0.0.5
 
 * Pin dependencies to minor version
